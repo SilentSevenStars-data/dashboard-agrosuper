@@ -1,0 +1,7 @@
+@font-face{font-family:'Biennale';font-style:normal;font-weight:900;font-display:swap;src:url('../fonts/Biennale-Black.otf') format('opentype')}
+@font-face{font-family:'Biennale';font-style:normal;font-weight:700;font-display:swap;src:url('../fonts/Biennale-Bold.otf') format('opentype')}
+@font-face{font-family:'Biennale';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/Biennale-Regular.otf') format('opentype')}
+@font-face{font-family:'Biennale';font-style:normal;font-weight:350;font-display:swap;src:url('../fonts/Biennale-Book.otf') format('opentype')}
+
+/* Usa font-weight normal: 900 titulo | 700 subtitulo | 400 cuerpo | 350 cuerpo secundario.
+   Con estos @font-face el navegador toma el archivo real y no sintetiza negrita. */
