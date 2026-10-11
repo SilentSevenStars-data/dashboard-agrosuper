@@ -1,0 +1,10 @@
+{
+  "titulo": "Panel de gestión",
+  "subtitulo": "Datos de ejemplo — reemplaza data/datos.xlsx por tu archivo",
+  "archivo": "data/datos.xlsx",
+  "hoja": null,
+  "metricaPorDefecto": null,
+  "dimensionPorDefecto": null,
+  "dimension2PorDefecto": null,
+  "columnaFecha": null
+}

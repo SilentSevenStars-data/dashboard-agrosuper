@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel de gestión</title>
+<link rel="icon" href="img/logo-primario.png">
+<link rel="stylesheet" href="css/fuentes.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <img class="logo" src="img/logo-primario.svg" alt="Agrosuper" width="168" height="51">
+    <div class="titulos">
+      <h1 id="titulo">Panel de gestión</h1>
+      <p id="subtitulo" class="sec"></p>
+    </div>
+    <div class="acciones">
+      <button id="btnRefrescar" class="btn" type="button">Actualizar datos</button>
+      <label class="btn btn-sec" for="fileLocal">Probar archivo local</label>
+      <input id="fileLocal" type="file" accept=".xlsx,.xls,.csv" hidden>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div id="aviso" class="aviso" hidden></div>
+  <div id="estado" class="estado">Cargando datos…</div>
+
+  <div id="app" hidden>
+    <section class="panel controles" aria-label="Controles">
+      <div class="campo" id="campoHoja" hidden><label for="selHoja">Hoja</label><select id="selHoja"></select></div>
+      <div class="campo" id="campoMetrica"><label for="selMetrica">Métrica</label><select id="selMetrica"></select></div>
+      <div class="campo"><label for="selAgg">Cálculo</label>
+        <select id="selAgg"><option value="sum">Suma</option><option value="avg">Promedio</option><option value="count">Conteo de registros</option></select></div>
+      <div class="campo" id="campoDim1"><label for="selDim1">Agrupar por</label><select id="selDim1"></select></div>
+      <div class="campo" id="campoDim2"><label for="selDim2">Segundo agrupador</label><select id="selDim2"></select></div>
+      <div class="campo" id="campoGrano"><label for="selGrano">Período</label>
+        <select id="selGrano"><option value="day">Día</option><option value="week">Semana</option><option value="month">Mes</option><option value="year">Año</option></select></div>
+      <div class="campo" id="campoDesde"><label for="inDesde">Desde</label><input id="inDesde" type="date"></div>
+      <div class="campo" id="campoHasta"><label for="inHasta">Hasta</label><input id="inHasta" type="date"></div>
+    </section>
+
+    <section class="filtros" id="filtros" aria-label="Filtros"></section>
+
+    <section class="kpis" id="kpis" aria-label="Indicadores"></section>
+
+    <section class="grid2">
+      <article class="card ancha" id="cardTiempo">
+        <h2 id="tTiempo">Evolución</h2>
+        <div class="chart"><canvas id="chTiempo" role="img" aria-label="Evolución en el tiempo"></canvas></div>
+      </article>
+      <article class="card">
+        <h2 id="tDim1">Por categoría</h2>
+        <div class="chart"><canvas id="chDim1" role="img" aria-label="Ranking por primer agrupador"></canvas></div>
+      </article>
+      <article class="card">
+        <h2 id="tDim2">Por categoría</h2>
+        <div class="chart"><canvas id="chDim2" role="img" aria-label="Ranking por segundo agrupador"></canvas></div>
+      </article>
+    </section>
+
+    <section class="card tabla-card">
+      <div class="tabla-top">
+        <h2>Detalle</h2>
+        <div class="tabla-tools">
+          <input id="inBuscar" type="search" placeholder="Buscar en la tabla…" aria-label="Buscar en la tabla">
+          <button id="btnExportar" class="btn btn-sec" type="button">Descargar Excel filtrado</button>
+        </div>
+      </div>
+      <div class="tabla-wrap"><table id="tabla"></table></div>
+      <div class="pager">
+        <span id="pagInfo" class="sec"></span>
+        <span>
+          <button id="pgPrev" class="btn btn-sec" type="button">Anterior</button>
+          <button id="pgNext" class="btn btn-sec" type="button">Siguiente</button>
+        </span>
+      </div>
+    </section>
+
+    <footer id="pie" class="pie sec"></footer>
+  </div>
+</main>
+
+<script src="vendor/xlsx.full.min.js"></script>
+<script src="vendor/chart.umd.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
